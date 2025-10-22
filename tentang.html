@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami | Merapi Watch</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+      /* === HEADER === */
+    header {
+      background-color: #1b1b1b;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+    }
+
+    .logo h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .logo-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-link:hover {
+      opacity: 0.8;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ff8800;
+    }
+    .hero {
+      background-image: url('img/tim-vulkanologi.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      padding: 50px 8%;
+      line-height: 1.8;
+    }
+
+    .content h3 {
+      color: #ff8800;
+      margin-top: 40px;
+    }
+
+    .tim {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+  <header>
+    <a href="landingpage.html" class="logo-link">
+      <div class="logo">
+        <img src="logokita.png" alt="Logo">
+        <h1>Nada Vulkanik</h1>
+      </div>
+    </a>
+    <nav>
+      <a href="#beranda" class="active">Beranda</a>
+      <a href="pengetahuan.html">Pengetahuan Kebencanaan</a>
+      <a href="#kontak">Tentang</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Tentang Kami</h2>
+  </section>
+
+  <section class="content">
+    <h3>1. Profil Merapi Watch</h3>
+    <p><b>Merapi Watch</b> adalah platform edukasi dan informasi yang berfokus pada pemantauan aktivitas gunung berapi di Indonesia, khususnya Pulau Jawa. Tujuan kami adalah menyediakan data yang akurat, terkini, dan mudah diakses oleh masyarakat agar dapat meningkatkan kesadaran serta kesiapsiagaan terhadap potensi bencana vulkanik.</p>
+
+    <h3>2. Visi dan Misi</h3>
+    <p><b>Visi:</b> Menjadi sumber informasi kebencanaan vulkanik terpercaya di Indonesia.</p>
+    <p><b>Misi:</b></p>
+    <ul>
+      <li>Menyediakan informasi real-time terkait status gunung berapi.</li>
+      <li>Mengedukasi masyarakat mengenai mitigasi dan kesiapsiagaan bencana.</li>
+      <li>Berpartisipasi dalam upaya pengurangan risiko bencana nasional.</li>
+    </ul>
+
+    <h3>3. Tim Pengembang</h3>
+    <div class="tim">
+      <div class="card">
+        <img src="img/profil1.jpg" alt="Foto Tim 1">
+        <h4>Muhammad Zikri R.H</h4>
+        <p>Web Developer & Desainer</p>
+      </div>
+      <div class="card">
+        <img src="img/profil2.jpg" alt="Foto Tim 2">
+        <h4>Eileen Valescha</h4>
+        <p>Peneliti Vulkanologi</p>
+      </div>
+      <div class="card">
+        <img src="img/profil3.jpg" alt="Foto Tim 3">
+        <h4>Risky Ramadhan</h4>
+        <p>UI/UX & Data Analyst</p>
+      </div>
+      <div class="card">
+        <img src="img/profil4.jpg" alt="Foto Tim 4">
+        <h4>Ahmad Iqbal</h4>
+        <p>Content & Dokumentasi</p>
+      </div>
+      <div class="card">
+        <img src="img/profil4.jpg" alt="Foto Tim 4">
+        <h4>Anita Rahma</h4>
+        <p>Content & Dokumentasi</p>
+      </div>
+    </div>
+
+    <h3>4. Tujuan Kami</h3>
+    <p>Kami percaya bahwa pengetahuan adalah kunci utama dalam mengurangi dampak bencana. Dengan menghadirkan data, berita, dan panduan yang mudah dipahami, Merapi Watch berkomitmen membantu masyarakat agar lebih siap dan tangguh dalam menghadapi ancaman erupsi gunung berapi.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Merapi Watch | Edukasi & Informasi Kebencanaan Indonesia</p>
+  </footer>
+
+</body>
+</html>

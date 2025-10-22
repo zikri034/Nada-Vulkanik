@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nada Vulkanik</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+   header {
+  background-color: #0a0a0a;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container img {
+  width: 35px;       /* ukuran logo */
+  height: auto;
+}
+
+.logo-container h1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+    header h1 {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    /* === HERO CAROUSEL === */
+.hero {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  color: white;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: 70px;
+  left: 8%;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.caption h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.caption button {
+  padding: 10px 25px;
+  border: none;
+  background-color: #ff8800;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Overlay gelap agar teks lebih jelas */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Titik indikator di bawah carousel */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background-color: #ff8800;
+}
+
+/* lapisan gelap transparan agar teks lebih terbaca */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero h2 {
+  font-size: 28px;
+  font-weight: 700;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero button {
+  margin-top: 20px;
+  z-index: 1;
+  padding: 10px 25px;
+  border: none;
+  background-color: #ff8800;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+    .data-section {
+      background-color: #ff8800;
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .data-grid {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .data-item h3 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .data-item p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .berita {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 50px 8%;
+      text-align: center;
+    }
+
+    .berita h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .berita-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 240px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      padding: 15px;
+      font-weight: 500;
+    }
+
+    .card button {
+      background-color: #ff8800;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .status {
+      text-align: center;
+      padding: 50px 8%;
+      background-color: white;
+    }
+
+    .status h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .status-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .status-item {
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .awas { background-color: #d32f2f; }
+    .siaga { background-color: #f57c00; }
+    .waspada { background-color: #fbc02d; color: #333; }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #111;
+      color: white;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 320px;
+      }
+      .hero h2 {
+        font-size: 22px;
+      }
+      .data-grid {
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="logo-container">
+    <img src="logokita.png" alt="Logo Nada Vulkanik">
+    <h1>Nada Vulkanik</h1>
+  </div>
+  <nav>
+    <a href="beranda.html">Beranda</a>
+    <a href="pengetahuan.html">Pengetahuan Kebencanaan</a>
+    <a href="tentang.html">Tentang</a>
+  </nav>
+</header>
+
+
+  <section class="hero">
+  <div class="carousel">
+    <div class="slide active">
+      <img src="download (bg).jpeg" alt="Gunung Merapi">
+      <div class="caption">
+        <h2>Status Terkini Gunung Merapi, Aktivitas, & Potensi Bencana</h2>
+        <button>Selengkapnya</button>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="download (smeru1).jpeg" alt="Gunung Semeru">
+      <div class="caption">
+        <h2>Gunung Semeru di Lumajang Terjadi Erupsi 8 Kali</h2>
+        <button>Selengkapnya</button>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="download (bromo).jpeg" alt="Gunung Bromo">
+      <div class="caption">
+        <h2>Gunung Bromo Menunjukkan Aktivitas Meningkat</h2>
+        <button>Selengkapnya</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- indikator titik -->
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+  <section class="data-section">
+    <h3>Data Bencana Gunung Meletus di Indonesia</h3>
+    <p>Sumber: BNPB</p>
+    <div class="data-grid">
+      <div class="data-item">
+        <h3>76</h3>
+        <p>Gunung Berapi Aktif</p>
+      </div>
+      <div class="data-item">
+        <h3>156</h3>
+        <p>Bencana Gunung Meletus</p>
+      </div>
+      <div class="data-item">
+        <h3>526</h3>
+        <p>Meninggal Dunia</p>
+      </div>
+      <div class="data-item">
+        <h3>14.265</h3>
+        <p>Luka-luka</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="berita">
+    <h2>Berita Terbaru</h2>
+    <div class="berita-grid">
+      <div class="card">
+        <img src="91008-wisata-di-lereng-merapi.jpg" alt="">
+        <h4>Status Siaga di Gunung Merapi</h4>
+        <button>Selengkapnya</button>
+      </div>
+      <div class="card">
+        <img src="download.jpeg" alt="">
+        <h4>Gunung Semeru di Lumajang Erupsi 8 Kali</h4>
+        <button>Selengkapnya</button>
+      </div>
+      <div class="card">
+        <img src="download (prahu).jpeg" alt="">
+        <h4>Gunung Tangkuban Parahu Mulai Menunjukkan Aktivitas Vulkanik</h4>
+        <button>Selengkapnya</button>
+      </div>
+      <div class="card">
+        <img src="download (Slamet).jpeg" alt="">
+        <h4>Aktivitas Vulkanik di Gunung Slamet</h4>
+        <button>Selengkapnya</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="status">
+    <h3>Status Gunung Berapi diatas Normal</h3>
+    <p>Sumber: PVMBG</p>
+    <div class="status-grid">
+      <div class="status-item awas">Awas (Level IV)</div>
+      <div class="status-item siaga">Siaga (Level III)</div>
+      <div class="status-item waspada">Waspada (Level II)</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Nada Vulkanik | Semua Hak Dilindungi
+  </footer>
+
+  <script>
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  // otomatis ganti slide tiap 5 detik
+  setInterval(nextSlide, 5000);
+
+  // klik titik manual
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      current = index;
+      showSlide(current);
+    });
+  });
+</script>
+
+</body>
+</html>
